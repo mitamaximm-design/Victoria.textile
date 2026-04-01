@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <title>Victoria – Lenjerie de Pat</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/logo.png" />
+
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div>
+    <i class="fas fa-phone" ></i>+373 69 881 692 |
+    <i class="fas fa-envelope" ></i>
+    <a href="mailto:contact@victoria-textile.md">contact@victoria-textile.md</a>
+  </div>
+  <div>
+    <div class="soc">
+      <a href="https://www.facebook.com/profile.php?id=61578864391873">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/victoria_textile7/">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@victoria.textile2">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="vic">Victoria</span>
+      <span class="sub">Lenjerie de Pat</span>
+    </a>
+    <ul class="navl">
+      <li><a href="index.html" class="act">Acasă</a></li>
+      <li><a href="shop.html">Magazin</a></li>
+      <li><a href="#despre">Despre noi</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-act">
+      <button class="icn" onclick="toggleCart()">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cbadge" id="cbadge">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Meniu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mob-overlay" id="mobOverlay" onclick="closeMobileNav()"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="mob-logo">Victoria</a>
+    <a href="index.html" class="act">Acasă</a>
+    <a href="shop.html">Magazin</a>
+    <a href="cart.html">Coș</a>
+    <a href="contact.html">Contact</a>
+    <a href="checkout.html">Checkout</a>
+  </nav>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hslide act">
+    <img src="img/cladire.jpg" alt="Victoria - Magazin Chișinău">
+    <div class="hcap">
+      <span class="ey">Vizitează-ne</span>
+      <h1>Str. Columna 83<br>Chișinău</h1>
+      <p>Vino să ne cunoști personal — te așteptăm cu colecțiile noastre complete</p>
+      <a href="contact.html" class="bth">Contact & Orar</a>
+      <a href="shop.html" class="bth ol">Comandă Online</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="bg-c" id="categorii">
+  <div class="sec-wrap">
+    <div class="sectitle">
+      <h2>Alege categoria preferată</h2>
+      <span class="divdr"></span>
+    </div>
+    <div class="cats-grid">
+      <div class="ccard lg">
+        <img src="img/pleda-print.jpg" alt="Lenjerie de Pat">
+        <div class="cov">
+          <small>Bestseller</small>
+          <h5>Pleduri</h5>
+          <span class="ar">→</span>
+        </div>
+      </div>
+
+      <div class="cats-right">
+        <div class="ccard">
+          <img src="img/cuvertura-bej.jpg" alt="Pleduri">
+          <div class="cov">
+            <small>Nou</small>
+            <h5>Covertura</h5>
+            <span class="ar">
+            </span>
+          </div>
+        </div>
+
+        <div class="ccard">
+          <img src="img/perne_decorative.jpg" alt="Perne">
+          <div class="cov">
+            <small>Popular</small>
+            <h5>Perne</h5>
+            <span class="ar">
+            </span>
+          </div>
+        </div>
+
+        <div class="ccard">
+          <img src="img/pijama_principala.jpg" alt="Pijamale">
+          <div class="cov">
+            <small>Nou</small>
+            <h5>Pijamale</h5>
+            <span class="ar">
+            </span>
+          </div>
+        </div>
+
+        <div class="ccard">
+          <img src="img/ciorapi.jpg" alt="Ciorapi">
+          <div class="cov">
+            <small>Mici</small>
+            <h5>Ciorapi</h5>
+            <span class="ar">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="produse">
+  <div class="sec-wrap">
+    <div class="sectitle">
+      <span class="ey">Cele mai dorite</span>
+      <h2>Produse Recomandate</h2>
+      <span class="divdr"></span>
+    </div>
+    <div class="prod-grid">
+
+      <div class="pcard">
+        <div class="pimg">
+          <img src="img/cuvertura-alba.jpg" alt="Cuvertură Albă">
+          <span class="pbadge">Top Vânzări</span>
+          <div class="pacts">
+            <a href="#" onclick="addToCart('Cuvertură Albă',800,'Cuverturi','cuvertura-alba.jpg',event)" title="Coș">
+              <i class="fas fa-shopping-bag"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="pinfo">
+          <span class="pcat">Cuverturi</span>
+          <h6>Cuvertură Albă</h6>
+          <div class="pprice"><span class="cu">800 lei</span></div>
+        </div>
+        <button class="badd" onclick="addToCart('Cuvertură Albă',800,'Cuverturi','cuvertura-alba.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard">
+        <div class="pimg">
+          <img src="img/cuvertura-bej.jpg" alt="Cuvertură Bej">
+          <div class="pacts">
+            <a href="#" onclick="addToCart('Cuvertură Bej',800,'Cuverturi','cuvertura-bej.jpg',event)" title="Coș">
+              <i class="fas fa-shopping-bag"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="pinfo">
+          <span class="pcat">Cuverturi</span>
+          <h6>Cuvertură Bej</h6>
+          <div class="pprice"><span class="cu">800 lei</span></div>
+        </div>
+        <button class="badd" onclick="addToCart('Cuvertură Bej',800,'Cuverturi','cuvertura-bej.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard">
+        <div class="pimg">
+          <img src="img/cuvertura-bleu.jpg" alt="Cuvertură Bleu">
+          <div class="pacts">
+            <a href="#" onclick="addToCart('Cuvertură Bleu',800,'Cuverturi','cuvertura-bleu.jpg',event)" title="Coș">
+              <i class="fas fa-shopping-bag"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="pinfo">
+          <span class="pcat">Cuverturi</span>
+          <h6>Cuvertură Bleu</h6>
+          <div class="pprice"><span class="cu">800 lei</span></div>
+        </div>
+        <button class="badd" onclick="addToCart('Cuvertură Bleu',800,'Cuverturi','cuvertura-bleu.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard">
+        <div class="pimg">
+          <img src="img/cuvertura-verde.jpg" alt="Cuvertură Verde">
+          <div class="pacts">
+            <a href="#" onclick="addToCart('Cuvertură Verde',800,'Cuverturi','cuvertura-verde.jpg',event)" title="Coș">
+              <i class="fas fa-shopping-bag"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="pinfo">
+          <span class="pcat">Cuverturi</span>
+          <h6>Cuvertură Verde</h6>
+          <div class="pprice"><span class="cu">800 lei</span></div>
+        </div>
+        <button class="badd" onclick="addToCart('Cuvertură Verde',800,'Cuverturi','cuvertura-verde.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:24px">
+      <a href="shop.html" class="bgo">Vezi Toate Produsele</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="despre">
+  <div class="sec-wrap">
+    <div class="about-grid">
+      <div><img src="img/logo2.png" alt="Despre Victoria" class="aimg"></div>
+      <div class="atxt">
+        <div class="sectitle">
+          <span class="ey">Povestea noastră</span>
+          <h2>Calitate și confort<br>în fiecare fibră</h2>
+          <span class="divdr" style="margin:12px 0 0"></span>
+        </div>
+        <p>Victoria Lenjerie de Pat este un brand moldovenesc dedicat oferirii celor mai bune produse textile pentru dormitorul tău. Credem că somnul bun este esența unei vieți sănătoase.</p>
+        <p>Fiecare produs este selectat cu grijă — de la lenjerii din bumbac egipțian, la pleduri moi din microfibră și pijamale confortabile pentru toată familia.</p>
+        <div class="achk">
+          <i class="fas fa-check-circle"></i>
+          <span>Bumbac 100% certificat OEKO-TEX</span>
+        </div>
+
+        <div class="achk">
+          <i class="fas fa-check-circle"></i>
+          <span>Livrare rapidă în toată Moldova</span>
+        </div>
+
+        <div class="achk">
+          <i class="fas fa-check-circle"></i>
+          <span>Produse testate pentru siguranța familiei</span>
+        </div>
+
+        <div class="achk"><i class="fas fa-check-circle"></i>
+          <span>Garanție 2 ani pentru toate produsele</span>
+        </div>
+        <br>
+        <a href="shop.html" class="bgo">Comandă Acum</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-dk" id="testimoniale">
+  <div class="sec-wrap">
+    <div class="sectitle">
+      <span class="ey" style="color:var(--gol)">Recenzii clienți</span>
+      <h2 class="w">Ce spun cumpărătorii noștri</h2>
+      <span class="divdr"></span>
+    </div>
+
+    <div class="tgrid">
+      <div class="tcard">
+        <div class="tq">"</div>
+        <img src="img/review-cristina.jpg" alt="Pîrlii Cristina" class="timg">
+        <p>Am procurat o cuvertură foarte drăguță, personalul a fost amabil și prețurile avantajoase, revin cu siguranță!</p>
+        <span class="tnm">— Pîrlii Cristina, Chișinău</span>
+      </div>
+
+      <div class="tcard">
+        <div class="tq">"</div>
+        <img src="img/review-elena.jpg" alt="Elena Donceva" class="timg">
+        <p>Super magazin de textile, prețuri super, iar cel mai important — seturi pentru orice buzunar! 👍</p>
+        <span class="tnm">— Elena Donceva, Chișinău</span>
+      </div>
+
+      <div class="tcard">
+        <div class="tq">"</div>
+        <img src="img/review-anna.jpg" alt="Anna Podborski" class="timg">
+        <p>Am rămas foarte mulțumită. Merci pentru o atârnare pozitivă și respectuoasă.</p>
+        <span class="tnm">— Anna Podborski</span>
+      </div>
+
+      <div class="tcard">
+        <div class="tq">"</div>
+        <img src="img/user.jpg" alt="Alexandru M." class="timg">
+        <p>Calitate deosebită la prețuri accesibile! Păturile sunt moi și calde, exact ce căutam. Livrarea a fost rapidă, recomand cu toată inima!</p>
+        <span class="tnm">— Alexandru M., Chișinău</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fgrid">
+    <div>
+      <span class="fvic">Victoria</span>
+      <span class="fsub">Lenjerie de Pat</span>
+      <p class="footer">Aducem confortul și eleganța în dormitorul tău prin produse premium de calitate.</p>
+      <ul class="fcont">
+        <li><i class="fas fa-map-marker-alt"></i>
+          <a href="#">Str. Columna 83, Chișinău</a></li>
+        <li><i class="fas fa-phone-alt"></i>
+          <a href="tel:+37369881692">+373 69 881 692</a></li>
+        <li><i class="fas fa-envelope"></i>
+          <a href="mailto:contact@victoria-textile.md">contact@victoria-textile.md</a></li>
+      </ul>
+
+      <div class="fsocl">
+        <a href="https://www.facebook.com/profile.php?id=61578864391873"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/victoria_textile7/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@victoria.textile2"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div>
+      <h6>Informații</h6>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="shop.html">Magazin</a></li>
+        <li><a href="cart.html">Coș de Cumpărături</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h6>Cont &amp; Plăți</h6>
+      <ul><li><a href="cart.html">Comenzile Mele</a>
+      </li>
+    </ul>
+      <div>
+      </br>
+        <div class="plata">Plată Sigură</div>
+        <img src="img/payments.png" alt="Metode plată">
+      </div>
+    </div>
+  </div>
+
+  <div class="fbot">© 2026 Victoria Lenjerie de Pat · Toate drepturile rezervate</div>
+  <div class="tekwill">
+    <img src="img/tekwill-logo.png" alt="Tekwill în Fiecare Școală" class="tekwilllg">
+    <p class="tekwill-text">
+      Acest website a fost realizat în cadrul competiției „Tekwill Junior Ambassadors" organizată de proiectul „Tekwill în Fiecare Școală" și nu reflectă neapărat opinia proiectului.
+    </p>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#" class="btop" id="btop">
+  <i class="fas fa-chevron-up">
+  </i>
+</a>
+<div class="notif" id="notif">
+</div>
+
+<!-- CART SIDEBAR -->
+<div class="covrl" id="covrl" onclick="closeCart()"></div>
+<div class="csid" id="csid">
+  <div class="chdr">
+    <h5>Coșul Tău</h5>
+    <button class="ccls" onclick="closeCart()">
+      <i class="fas fa-times">
+      </i>
+    </button>
+  </div>
+
+  <div class="cbdy">
+    <div class="cmt" id="cmt">
+      <i class="fas fa-shopping-bag"></i>
+      <p>Coșul tău este gol.<br>Descoperă produsele noastre!</p>
+    </div>
+    <div id="citems">
+    </div>
+  </div>
+
+  <div class="cftr" id="cftr" style="display:none">
+    <div class="ctot">
+      <span>Total:</span>
+      <span class="am" id="ctotal">0 lei</span>
+    </div>
+    <p class="livrare">
+      <i class="fas fa-truck" style="margin-right:4px">
+      </i> Livrare gratuită peste 800 lei
+    </p>
+    <button class="bck" onclick="openOrderCart()">Comandă Acum</button>
+    <button class="bcs" onclick="closeCart()">Continuă Cumpărăturile</button>
+  </div>
+</div>
+
+<!-- ORDER MODAL -->
+<div class="movrl" id="movrl" onclick="if(event.target===this)closeOrder()">
+  <div class="mbox">
+    <div class="mhdr">
+      <h5>Plasează Comanda</h5>
+      <button class="mcls" onclick="closeOrder()">
+        <i class="fas fa-times">
+        </i>
+      </button>
+    </div>
+    <div class="mbdy">
+      <div id="mform">
+        <div class="osmry">
+          <h6>Sumar Comandă</h6>
+          <div id="osmitems">
+          </div>
+          <div class="ost">
+            <span>Total</span>
+            <span id="osmtotal">0 lei</span>
+          </div>
+        </div>
+
+        <div class="fr2">
+          <div class="fg">
+            <label>Prenume *</label>
+            <input type="text" id="fn" placeholder="Ex: Maxim">
+          </div>
+
+          <div class="fg">
+            <label>Nume *</label>
+            <input type="text" id="ln" placeholder="Ex: Mita">
+          </div>
+
+        </div>
+        <div class="fg">
+          <label>Email *</label>
+          <input type="email" id="em" placeholder="email@exemplu.md">
+        </div>
+
+        <div class="fg">
+          <label>Telefon *</label>
+          <input type="tel" id="ph" placeholder="+373 69 000 000">
+        </div>
+
+        <div class="fg">
+          <label>Adresa de livrare *</label>
+          <input type="text" id="ad" placeholder="Str. Exemplu nr. 10, ap. 5">
+        </div>
+
+        <div class="fr2">
+          <div class="fg">
+            <label>Oraș / Localitate *</label>
+            <input type="text" id="ct" placeholder="Chișinău">
+          </div>
+
+          <div class="fg">
+            <label>Raion *</label>
+            <select id="jd">
+              <option value="">-- Selectează --</option>
+              <optgroup label="Chișinău și suburbii">
+                <option>Chișinău (mun.)</option>
+                <option>Cricova</option>
+                <option>Codru</option>
+                <option>Durlești</option>
+                <option>Stăuceni</option>
+                <option>Trușeni</option>
+                <option>Bubuieci</option>
+                <option>Băcioi</option>
+                <option>Ghidighici</option>
+                <option>Grătiești</option>
+                <option>Sângera</option>
+                <option>Vadul lui Vodă</option>
+              </optgroup>
+
+              <optgroup label="Raioane Moldova">
+                <option>Anenii Noi</option>
+                <option>Basarabeasca</option>
+                <option>Briceni</option>
+                <option>Cahul</option>
+                <option>Călărași</option>
+                <option>Cantemir</option>
+                <option>Căușeni</option>
+                <option>Cimișlia</option>
+                <option>Criuleni</option>
+                <option>Dondușeni</option>
+                <option>Drochia</option>
+                <option>Dubăsari</option>
+                <option>Edineț</option>
+                <option>Fălești</option>
+                <option>Florești</option>
+                <option>Glodeni</option>
+                <option>Hîncești</option>
+                <option>Ialoveni</option>
+                <option>Leova</option>
+                <option>Nisporeni</option>
+                <option>Ocnița</option>
+                <option>Orhei</option>
+                <option>Rezina</option>
+                <option>Rîșcani</option>
+                <option>Sîngerei</option>
+                <option>Șoldănești</option>
+                <option>Soroca</option>
+                <option>Strășeni</option>
+                <option>Ștefan Vodă</option>
+                <option>Taraclia</option>
+                <option>Telenești</option>
+                <option>Ungheni</option>
+              </optgroup>
+
+              <optgroup label="Alte orașe">
+                <option>Bălți (mun.)</option>
+                <option>Comrat (mun.)</option>
+                <option>Tiraspol</option>
+                <option>Altul</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Mesaj (opțional)</label>
+          <textarea id="msg" rows="2" placeholder="Mențiuni speciale...">
+          </textarea>
+        </div>
+
+        <div class="fg">
+          <label>Metodă de plată</label>
+          <select id="pay">
+            <option value="ramburs">Ramburs (la livrare)</option>
+            <option value="card">Card online</option>
+            <option value="transfer">Transfer bancar</option>
+          </select>
+        </div>
+
+        <button class="bord" onclick="placeOrder()">
+          <i class="fas fa-check-circle" style="margin-right:7px"></i>Confirmă Comanda</button>
+      </div>
+      <div class="succbox" id="sbox">
+        <i class="fas fa-check-circle"></i>
+        <h4>Comanda a fost plasată!</h4>
+        <p>Mulțumim pentru comanda ta! Vei primi un email de confirmare în câteva minute.</p>
+        <br>
+        <button class="bgo" onclick="closeOrder()">Înapoi la Magazin</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

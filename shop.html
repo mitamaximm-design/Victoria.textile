@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <title>Magazin - Victoria Lenjerie de Pat</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/logo.png" />
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div>
+    <i class="fas fa-phone" style="margin-right:5px"></i>+373 69 881 692 &nbsp;|&nbsp;
+    <i class="fas fa-envelope" style="margin-right:5px"></i>
+    <a href="mailto:contact@victoria-textile.md">contact@victoria-textile.md</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="tsoc">
+      <a href="https://www.facebook.com/profile.php?id=61578864391873">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/victoria_textile7/">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@victoria.textile2">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo">
+      <span class="v">Victoria</span>
+      <span class="s">Lenjerie de Pat</span>
+    </a>
+    <ul class="navl">
+      <li><a href="index.html">Acasă</a></li>
+      <li><a href="shop.html" class="act">Magazin</a></li>
+      <li><a href="cart.html">Coș</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-act">
+      <button class="icn" onclick="toggleCart()">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cbadge" id="cbadge">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Meniu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mob-overlay" id="mobOverlay" onclick="closeMobileNav()"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="mob-logo">Victoria</a>
+    <a href="index.html">Acasă</a>
+    <a href="shop.html" class="act">Magazin</a>
+    <a href="cart.html">Coș</a>
+    <a href="contact.html">Contact</a>
+    <a href="checkout.html">Checkout</a>
+  </nav>
+</nav>
+
+<div class="bcrumb">
+  <div class="bcrumb-in">
+    <a href="index.html">Acasă</a><span class="sep">›</span>
+    <span class="cur">Magazin</span>
+  </div>
+</div>
+
+<div class="shop-wrap">
+  <aside class="shop-aside">
+    <div style="margin-bottom:24px">
+      <h5>Categorii</h5>
+      <div id="cat-filter">
+        <label class="filter-lbl">
+          <input type="radio" name="cat" value="Toate" checked> Toate</label>
+        <label class="filter-lbl">
+          <input type="radio" name="cat" value="Cuverturi"> Cuverturi</label>
+        <label class="filter-lbl">
+          <input type="radio" name="cat" value="Pleduri"> Pleduri</label>
+        <label class="filter-lbl">
+          <input type="radio" name="cat" value="Pijamale"> Pijamale</label>
+        <label class="filter-lbl">
+          <input type="radio" name="cat" value="Perne"> Perne</label>
+        <label class="filter-lbl">
+          <input type="radio" name="cat" value="Ciorapi"> Ciorapi</label>
+      </div>
+    </div>
+
+    <div>
+      <h5>Preț (lei)</h5>
+      <div id="price-filter">
+        <label class="filter-lbl">
+          <input type="checkbox" value="0-50"> 0 – 50 lei</label>
+        <label class="filter-lbl">
+          <input type="checkbox" value="50-100"> 50 – 100 lei</label>
+        <label class="filter-lbl">
+          <input type="checkbox" value="100-200"> 100 – 200 lei</label>
+        <label class="filter-lbl">
+          <input type="checkbox" value="200-300"> 200 – 300 lei</label>
+        <label class="filter-lbl">
+          <input type="checkbox" value="300+"> Peste 300 lei</label>
+      </div>
+    </div>
+  </aside>
+
+  <div>
+    <div class="produse-gasite">
+      <strong id="prod-count-num" style="color:var(--ch)">12</strong> produse găsite
+    </div>
+    <div id="prod-grid" class="top-vinzari">
+      <div class="pcard" data-cat="Cuverturi" data-price="800">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Top Vânzări</span>
+          <img src="img/cuvertura-alba.jpg" alt="Cuvertură Albă" loading="lazy">
+        </div>
+
+        <div class="pinfo">
+          <span class="pcat">Cuverturi</span>
+          <span class="pname">Cuvertură Albă</span>
+          <div class="pstars">
+          </div><div class="pprice">
+            <span class="cur">800 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Cuvertură Albă',800,'Cuverturi','cuvertura-alba.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+      <div class="pcard" data-cat="Cuverturi" data-price="800">
+        <div class="pimg">
+          <img src="img/cuvertura-bej.jpg" alt="Cuvertură Bej" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Cuverturi</span>
+          <span class="pname">Cuvertură Bej</span>
+          <div class="pstars">
+          </div><div class="pprice">
+            <span class="cur">800 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Cuvertură Bej',800,'Cuverturi','cuvertura-bej.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Cuverturi" data-price="800">
+        <div class="pimg">
+          <img src="img/cuvertura-bleu.jpg" alt="Cuvertură Bleu" loading="lazy">
+        </div>
+
+        <div class="pinfo">
+          <span class="pcat">Cuverturi</span>
+          <span class="pname">Cuvertură Bleu</span>
+          <div class="pstars">
+          </div>
+          <div class="pprice">
+            <span class="cur">800 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Cuvertură Bleu',800,'Cuverturi','cuvertura-bleu.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Cuverturi" data-price="800">
+        <div class="pimg">
+          <img src="img/cuvertura-verde.jpg" alt="Cuvertură Verde" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Cuverturi</span>
+          <span class="pname">Cuvertură Verde</span>
+          <div class="pstars">
+          </div><div class="pprice">
+            <span class="cur">800 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Cuvertură Verde',800,'Cuverturi','cuvertura-verde.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Pijamale" data-price="199">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Nou</span>
+          <img src="img/pijama-galben.jpg" alt="Pijama Copii Galbenă Hipopotami" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Pijamale</span>
+          <span class="pname">Pijama Copii Galbenă Hipopotami</span>
+          <div class="pstars">
+          </div><div class="pprice">
+            <span class="cur">199 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Pijama Copii Galbenă Hipopotami',199,'Pijamale','pijama-galben.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Pijamale" data-price="199">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Nou</span>
+          <img src="img/pijama-roz.jpg" alt="Pijama Copii Roz Unicorni" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Pijamale</span>
+          <span class="pname">Pijama Copii Roz Unicorni</span>
+          <div class="pstars">
+          </div><div class="pprice">
+            <span class="cur">199 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Pijama Copii Roz Unicorni',199,'Pijamale','pijama-roz.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Pleduri" data-price="350">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Nou</span>
+          <img src="img/pleda-bej.jpg" alt="Pătură Microfibră Bej" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Pleduri</span>
+          <span class="pname">Pătură Microfibră Bej</span>
+          <div class="pstars">
+          </div>
+
+          <p class="patura">Pătură moale și pufoasă de la producător turcesc. Fibra din microfibră este un material practic pentru pături. Principalul avantaj este moliciunea, capacitatea de a încălzi în perioadele reci ale anului și practicitatea. Firul din microfibră, spre deosebire de materialele naturale cum ar fi lâna, se spală ușor și se usucă rapid. Nu provoacă alergii și nu se electrizează ca materialele din poliester.</p>
+          <div class="pprice">
+            <span class="cur">350 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Pătură Microfibră Bej',350,'Pleduri','pleda-bej.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Pleduri" data-price="350">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Nou</span>
+          <img src="img/pleda-print.jpg" alt="Pătură Microfibră Print" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Pleduri</span>
+          <span class="pname">Pătură Microfibră Print</span>
+          <div class="pstars">
+          </div>
+          <p class="patura">Pătură moale și pufoasă de la producător turcesc. Fibra din microfibră este un material practic pentru pături. Principalul avantaj este moliciunea, capacitatea de a încălzi în perioadele reci ale anului și practicitatea. Firul din microfibră, spre deosebire de materialele naturale cum ar fi lâna, se spală ușor și se usucă rapid. Nu provoacă alergii și nu se electrizează ca materialele din poliester.</p>
+          <div class="pprice">
+            <span class="cur">350 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Pătură Microfibră Print',350,'Pleduri','pleda-print.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Pleduri" data-price="350">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Nou</span>
+          <img src="img/pleda-stele.jpg" alt="Pătură Microfibră Stele" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Pleduri</span>
+          <span class="pname">Pătură Microfibră Stele</span>
+          <div class="pstars">
+          </div>
+          <p class="patura">Pătură moale și pufoasă de la producător turcesc. Fibra din microfibră este un material practic pentru pături. Principalul avantaj este moliciunea, capacitatea de a încălzi în perioadele reci ale anului și practicitatea. Firul din microfibră, spre deosebire de materialele naturale cum ar fi lâna, se spală ușor și se usucă rapid. Nu provoacă alergii și nu se electrizează ca materialele din poliester.</p>
+          <div class="pprice">
+            <span class="cur">350 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Pătură Microfibră Stele',350,'Pleduri','pleda-stele.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Pijamale" data-price="199">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Nou</span>
+          <img src="img/pijama-rosu.jpg" alt="Pijama Copii Roșie Mașini" loading="lazy">
+        </div>
+          <div class="pinfo">
+          <span class="pcat">Pijamale</span>
+          <span class="pname">Pijama Copii Roșie Mașini</span>
+          <div class="pstars">
+          </div><div class="pprice">
+            <span class="cur">199 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Pijama Copii Roșie Mașini',199,'Pijamale','pijama-rosu.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Pijamale" data-price="199">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Nou</span>
+          <img src="img/pijama-gri.jpg" alt="Pijama Copii Gri Girafe" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Pijamale</span>
+          <span class="pname">Pijama Copii Gri Girafe</span>
+          <div class="pstars">
+          </div><div class="pprice">
+            <span class="cur">199 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Pijama Copii Gri Girafe',199,'Pijamale','pijama-gri.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Ciorapi" data-price="19">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Nou</span>
+          <img src="img/ciorapi.jpg" alt="Șosete" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Ciorapi</span><span class="pname">Șosete</span>
+          <div class="pstars">
+          </div>
+          <div class="pprice">
+            <span class="cur">19 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Șosete',19,'Ciorapi','ciorapi.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+      <div class="pcard" data-cat="Perne" data-price="99">
+        <div class="pimg">
+          <span class="pbadge" style="background:var(--go)">Nou</span>
+          <img src="img/perne_decorative.jpg" alt="Pernă" loading="lazy">
+        </div>
+        <div class="pinfo">
+          <span class="pcat">Perne</span>
+          <span class="pname">Pernă</span>
+          <div class="pstars">
+          </div><div class="pprice">
+            <span class="cur">99 lei</span>
+          </div>
+        </div>
+        <button class="padd" onclick="addToCart('Pernă',99,'Perne','perne_decorative.jpg',event)">+ Adaugă în Coș</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fgrid">
+    <div>
+      <span class="fvic">Victoria</span>
+      <span class="fsub">Lenjerie de Pat</span>
+      <p class="informatii">Aducem confortul si eleganta in dormitorul tau prin produse premium de calitate.</p>
+      <ul class="fcl" style="padding:0">
+        <li><i class="fas fa-map-marker-alt"></i>
+          <a href="#">Str. Columna 83, Chișinău</a></li>
+        <li><i class="fas fa-phone-alt"></i>
+          <a href="tel:+373 69 881 692">+373 69 881 692</a></li>
+        <li><i class="fas fa-envelope"></i>
+          <a href="mailto:contact@victoria-textile.md">contact@victoria-textile.md</a></li>
+      </ul>
+      <div class="fsocl">
+        <a href="https://www.facebook.com/profile.php?id=61578864391873"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/victoria_textile7/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@victoria.textile2"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div>
+      <h6>Informații</h6>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="shop.html">Magazin</a></li>
+        <li><a href="cart.html">Coș de Cumpărături</a></li>
+        
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>Cont &amp; Plăți</h6>
+      <ul><li><a href="#">Comenzile Mele</a></li></ul>
+      <div style="margin-top:14px">
+        <div class="cont-plati">Plata Sigura</div>
+        <img src="img/payments.png" alt="Plata" style="max-width:140px;opacity:.75">
+      </div>
+    </div>
+  </div>
+  <div class="fbot">© 2026 Victoria Lenjerie de Pat · Toate drepturile rezervate</div>
+  <div class="footer-tekwill">
+    <img src="img/tekwill-logo.png" alt="Tekwill în Fiecare Școală" style="height:36px;width:auto;opacity:.85">
+    <p class="text-tekwill">
+      Acest website a fost realizat în cadrul competiției „Tekwill Junior Ambassadors" organizată de proiectul „Tekwill în Fiecare Școală" și nu reflectă neapărat opinia proiectului.
+    </p>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#" class="btop" id="btop">
+  <i class="fas fa-chevron-up">
+  </i>
+</a>
+<div class="notif" id="notif">
+</div>
+
+<!-- CART SIDEBAR -->
+<div class="covrl" id="covrl" onclick="toggleCart()">
+</div>
+<div class="csid" id="csid">
+  <div class="chdr">
+    <h5>Coșul Tău</h5>
+    <button class="ccls" onclick="toggleCart()">
+      <i class="fas fa-times">
+      </i>
+    </button>
+  </div>
+  <div class="cbdy">
+    <div class="cmt" id="cmt">
+      <i class="fas fa-shopping-bag">
+      </i>
+      <p>Coșul tău este gol.</p>
+    </div>
+    <div id="citems">
+
+    </div>
+  </div>
+  <div class="cftr" id="cftr" style="display:none">
+    <div class="ctot">
+      <span>Total:</span>
+      <span class="am" id="ctotal">0 lei</span>
+    </div>
+    <p class="livrare">
+    <i class="fas fa-truck" style="margin-right:4px">
+    </i> Livrare gratuită peste 800 lei</p>
+    <button class="bck" onclick="openOrderCart()">Plasează Comanda</button>
+    <button class="bcs" onclick="toggleCart()">Continuă Cumpărăturile</button>
+  </div>
+</div>
+
+<div class="movrl" id="movrl" onclick="if(event.target===this)closeOrder()">
+  <div class="mbox">
+    <div class="mhdr">
+      <h5>Plasează Comanda</h5>
+      <button class="mcls" onclick="closeOrder()">
+        <i class="fas fa-times">
+        </i>
+      </button>
+    </div>
+
+    <div class="mbdy">
+      <div id="mform">
+        <div class="osmry">
+          <h6>Sumar Comandă</h6>
+          <div id="osmitems">
+          </div>
+          <div class="ost">
+          <span>Total</span>
+          <span id="osmtotal">0 lei</span>
+        </div>
+      </div>
+
+        <div class="fr2">
+          <div class="fg">
+            <label>Prenume *</label>
+            <input type="text" id="fn" placeholder="Ion">
+          </div>
+          <div class="fg">
+            <label>Nume *</label>
+            <input type="text" id="ln" placeholder="Popescu"></div>
+        </div>
+
+        <div class="fg">
+          <label>Email *</label>
+          <input type="email" id="em" placeholder="email@exemplu.ro">
+        </div>
+
+        <div class="fg">
+          <label>Telefon *</label>
+          <input type="tel" id="ph" placeholder="068 322 000">
+        </div>
+
+        <div class="fg">
+          <label>Adresa *</label>
+          <input type="text" id="ad" placeholder="Str. Exemplu nr. 10">
+        </div>
+
+        <div class="fr2">
+          <div class="fg">
+            <label>Oraș *</label>
+            <input type="text" id="ct" placeholder="Chișinău">
+          </div>
+
+          <div class="fg">
+            <label>Raion *</label>
+            <select id="jd">
+              <option value="">-- Selectează --</option>
+              <optgroup label="Chișinău și suburbii">
+                <option>Chișinău (mun.)</option>
+                <option>Cricova</option>
+                <option>Codru</option>
+                <option>Durlești</option>
+                <option>Stăuceni</option>
+                <option>Trușeni</option>
+                <option>Bubuieci</option>
+                <option>Băcioi</option>
+                <option>Ghidighici</option>
+                <option>Grătiești</option>
+                <option>Sângera</option>
+                <option>Vadul lui Vodă</option>
+              </optgroup>
+
+              <optgroup label="Raioane Moldova">
+                <option>Anenii Noi</option>
+                <option>Basarabeasca</option>
+                <option>Briceni</option>
+                <option>Cahul</option>
+                <option>Călărași</option>
+                <option>Cantemir</option>
+                <option>Căușeni</option>
+                <option>Cimișlia</option>
+                <option>Criuleni</option>
+                <option>Dondușeni</option>
+                <option>Drochia</option>
+                <option>Dubăsari</option>
+                <option>Edineț</option>
+                <option>Fălești</option>
+                <option>Florești</option>
+                <option>Glodeni</option>
+                <option>Hîncești</option>
+                <option>Ialoveni</option>
+                <option>Leova</option>
+                <option>Nisporeni</option>
+                <option>Ocnița</option>
+                <option>Orhei</option>
+                <option>Rezina</option>
+                <option>Rîșcani</option>
+                <option>Sîngerei</option>
+                <option>Șoldănești</option>
+                <option>Soroca</option>
+                <option>Strășeni</option>
+                <option>Ștefan Vodă</option>
+                <option>Taraclia</option>
+                <option>Telenești</option>
+                <option>Ungheni</option>
+              </optgroup>
+
+              <optgroup label="Alte orașe">
+                <option>Bălți (mun.)</option>
+                <option>Comrat (mun.)</option>
+                <option>Tiraspol</option>
+                <option>Altul</option>
+              </optgroup>
+            </select>
+          </div>
+
+        </div>
+        <div class="fg">
+          <label>Mesaj (opțional)</label>
+          <textarea id="msg" rows="2" placeholder="Mențiuni speciale...">
+          </textarea>
+        </div>
+
+        <div class="fg">
+          <label>Metodă plată</label>
+          <select id="pay">
+            <option value="ramburs">Ramburs (la livrare)</option>
+            <option value="card">Card online</option>
+            <option value="transfer">Transfer bancar</option>
+          </select>
+
+        </div>
+        <button class="bord" onclick="placeOrder()">
+          <i class="fas fa-check-circle" style="margin-right:6px">
+          </i>Confirmă Comanda</button>
+      </div>
+
+      <div class="succbox" id="sbox">
+        <i class="fas fa-check-circle"></i>
+        <h4>Comanda a fost plasată!</h4>
+        <p>Mulțumim! Vei primi un email de confirmare în câteva minute.</p>
+        <br>
+        <button class="btn-v" onclick="closeOrder()">Înapoi la Magazin</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <title>Finalizare Comandă - Victoria Lenjerie de Pat</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/logo.png" />
+</head>
+<body>
+
+<div class="topbar">
+  <div>
+    <i class="fas fa-phone" style="margin-right:5px"></i>+373 69 881 692 &nbsp;|&nbsp;
+    <i class="fas fa-envelope" style="margin-right:5px"></i>
+    <a href="mailto:contact@victoria-textile.md">contact@victoria-textile.md</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="tsoc">
+      <a href="https://www.facebook.com/profile.php?id=61578864391873">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/victoria_textile7/">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@victoria.textile2">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo">
+      <span class="v">Victoria</span>
+      <span class="s">Lenjerie de Pat</span>
+    </a>
+    <ul class="navl">
+      <li><a href="index.html">Acasă</a></li>
+      <li><a href="shop.html">Magazin</a></li>
+      <li><a href="cart.html">Coș</a></li>
+      <li><a href="checkout.html" class="act">Comandă</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-act">
+      <button class="icn" onclick="toggleCart()">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cbadge" id="cbadge">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Meniu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mob-overlay" id="mobOverlay" onclick="closeMobileNav()"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="mob-logo">Victoria</a>
+    <a href="index.html">Acasă</a>
+    <a href="shop.html">Magazin</a>
+    <a href="cart.html">Coș</a>
+    <a href="contact.html">Contact</a>
+    <a href="checkout.html" class="act">Checkout</a>
+  </nav>
+</nav>
+
+<div class="bcrumb">
+  <div class="bcrumb-in">
+    <a href="index.html">Acasă</a>
+    <span class="sep">›</span>
+    <a href="cart.html">Coș</a>
+    <span class="sep">›</span>
+    <span class="cur">Finalizare Comandă</span>
+  </div>
+</div>
+
+<div class="checkout-wrap">
+
+  <div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:400;margin-bottom:8px">Finalizare comandă</h2>
+    <p style="color:var(--mu);font-size:14px;margin-bottom:28px">Completează datele de livrare și metoda de plată.</p>
+
+    <div class="progress-bar">
+      <div class="progress-step done">
+        <div class="num">1</div><span class="lbl">Coș</span>
+      </div>
+      <div class="progress-line done">
+      </div>
+      <div class="progress-step done">
+        <div class="num">2</div>
+        <span class="lbl">Livrare</span>
+      </div>
+      <div class="progress-line pend"></div>
+      <div class="progress-step pend">
+        <div class="num">3</div>
+        <span class="lbl">Confirmare</span>
+      </div>
+    </div>
+
+    <div class="checkout-step">
+      <h5><i class="fas fa-user"></i>Informații personale</h5>
+      <div class="fr2" style="margin-bottom:14px">
+        <div class="fg">
+          <label>Prenume *</label>
+          <input type="text" id="fn" placeholder="Ion"></div>
+        <div class="fg">
+          <label>Nume *</label>
+          <input type="text" id="ln" placeholder="Popescu"></div>
+      </div>
+      <div class="fr2">
+        <div class="fg"><label>Email *</label>
+          <input type="email" id="em" placeholder="email@exemplu.ro">
+        </div>
+        <div class="fg"><label>Telefon *</label>
+          <input type="tel" id="ph" placeholder="068 322 000">
+        </div>
+      </div>
+    </div>
+
+    <div class="checkout-step">
+      <h5><i class="fas fa-map-marker-alt">
+      </i>Adresa de livrare</h5>
+      <div class="fg" style="margin-bottom:14px">
+        <label>Adresa *</label>
+        <input type="text" id="ad" placeholder="Str. Exemplu nr. 10, ap. 5">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px">
+        <div class="fg">
+          <label>Oraș *</label>
+          <input type="text" id="ct" placeholder="Chișinău">
+        </div>
+                  <div class="fg">
+            <label>Raion *</label>
+            <select id="jd">
+              <option value="">-- Selectează --</option>
+              <optgroup label="Chișinău și suburbii">
+                <option>Chișinău (mun.)</option>
+                <option>Cricova</option>
+                <option>Codru</option>
+                <option>Durlești</option>
+                <option>Stăuceni</option>
+                <option>Trușeni</option>
+                <option>Bubuieci</option>
+                <option>Băcioi</option>
+                <option>Ghidighici</option>
+                <option>Grătiești</option>
+                <option>Sângera</option>
+                <option>Vadul lui Vodă</option>
+              </optgroup>
+
+              <optgroup label="Raioane Moldova">
+                <option>Anenii Noi</option>
+                <option>Basarabeasca</option>
+                <option>Briceni</option>
+                <option>Cahul</option>
+                <option>Călărași</option>
+                <option>Cantemir</option>
+                <option>Căușeni</option>
+                <option>Cimișlia</option>
+                <option>Criuleni</option>
+                <option>Dondușeni</option>
+                <option>Drochia</option>
+                <option>Dubăsari</option>
+                <option>Edineț</option>
+                <option>Fălești</option>
+                <option>Florești</option>
+                <option>Glodeni</option>
+                <option>Hîncești</option>
+                <option>Ialoveni</option>
+                <option>Leova</option>
+                <option>Nisporeni</option>
+                <option>Ocnița</option>
+                <option>Orhei</option>
+                <option>Rezina</option>
+                <option>Rîșcani</option>
+                <option>Sîngerei</option>
+                <option>Șoldănești</option>
+                <option>Soroca</option>
+                <option>Strășeni</option>
+                <option>Ștefan Vodă</option>
+                <option>Taraclia</option>
+                <option>Telenești</option>
+                <option>Ungheni</option>
+              </optgroup>
+
+              <optgroup label="Alte orașe">
+                <option>Bălți (mun.)</option>
+                <option>Comrat (mun.)</option>
+                <option>Tiraspol</option>
+                <option>Altul</option>
+              </optgroup>
+            </select>
+          </div>
+        <div class="fg">
+          <label>Cod poștal</label>
+          <input type="text" placeholder="010001">
+        </div>
+      </div>
+      <div class="fg">
+        <label>Mențiuni curier</label>
+        <textarea id="co-msg" rows="2" placeholder="Instrucțiuni speciale...">
+        </textarea>
+      </div>
+    </div>
+
+    <div class="checkout-step">
+      <h5><i class="fas fa-credit-card">
+      </i>Metodă de plată</h5>
+      <label class="pay-option">
+        <input type="radio" name="pay" value="ramburs" checked>
+        <div>
+          <div class="pay-label">Ramburs (la livrare)</div>
+        <div class="pay-desc">Plătești cash curierului la primirea coletului</div>
+      </div>
+      </label>
+      <label class="pay-option">
+        <input type="radio" name="pay" value="card">
+        <div><div class="pay-label">Card online</div>
+        <div class="pay-desc">Plată sigură cu cardul bancar</div>
+      </div>
+      </label>
+      <label class="pay-option">
+        <input type="radio" name="pay" value="transfer">
+        <div><div class="pay-label">Transfer bancar</div>
+        <div class="pay-desc">Virament bancar — procesare în 1–2 zile lucrătoare</div>
+      </div>
+      </label>
+    </div>
+  </div>
+
+  <div style="position:sticky;top:80px">
+    <div style="background:white;border:1px solid var(--bd);padding:24px;margin-bottom:14px">
+      <h5 style="font-family:'Playfair Display',serif;font-size:19px;font-weight:400;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--bd)">Sumar comandă</h5>
+      <div id="checkout-items">
+        <div style="padding:20px;text-align:center;color:#999;font-size:14px">
+          Coșul tău este gol. <a href="shop.html" style="color:var(--cr)">Adaugă produse →</a>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--bd);padding-top:12px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:7px;font-size:14px">
+          <span style="color:var(--mu)">Subtotal</span>
+          <span id="co-sub">0 lei</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:7px;font-size:14px">
+          <span style="color:var(--mu)">Transport</span>
+          <span style="color:#28a745;font-weight:600">GRATUIT</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:2px solid var(--cr)">
+          <span style="font-weight:700;font-size:15px">TOTAL</span>
+          <span id="co-tot" style="font-weight:700;font-size:20px;color:var(--cr)">0 lei</span>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="submitCheckout()" class="bck checkout-submit-btn" style="width:100%;margin-bottom:10px">
+      <i class="fas fa-lock" style="margin-right:8px">
+      </i>Confirmă și Plătește
+    </button>
+    <p style="font-size:11px;color:var(--mu);text-align:center">
+      <i class="fas fa-shield-alt" style="margin-right:4px;color:var(--cr)">
+      </i>Comandă sigură — date protejate SSL
+    </p>
+    <div style="margin-top:14px;background:var(--bg);border:1px solid var(--bd);padding:14px;display:flex;align-items:center;gap:10px">
+      <i class="fas fa-truck" style="color:var(--cr);font-size:20px;flex-shrink:0"></i>
+      <div style="font-size:12px;color:var(--mu)">Livrare gratuită! Livrare în 24–48 ore prin curier rapid.</div>
+    </div>
+  </div>
+
+</div>
+<div id="co-succ">
+  <div class="inner">
+    <i class="fas fa-check-circle" style="font-size:60px;color:#28a745;margin-bottom:16px;display:block"></i>
+    <h3 style="font-family:'Playfair Display',serif;font-size:26px;font-weight:400;margin-bottom:12px">Comanda confirmată!</h3>
+    <p style="color:var(--mu);font-size:14px;line-height:1.8;margin-bottom:24px">Mulțumim pentru comanda ta! Vei primi un email de confirmare. Un consultant te va contacta în 24 ore.</p>
+    <a href="index.html" class="btn-v">Înapoi la Magazin</a>
+  </div>
+</div>
+
+<footer>
+  <div class="fgrid">
+    <div>
+      <span class="fvic">Victoria</span><span class="fsub">Lenjerie de Pat</span>
+      <p style="font-size:13px;line-height:1.8;margin-bottom:14px;color:rgba(255,255,255,.6)">Aducem confortul si eleganta in dormitorul tau prin produse premium de calitate.</p>
+      <ul class="fcl" style="padding:0">
+        <li><i class="fas fa-map-marker-alt"></i>
+          <a href="#">Str. Columna 83, Chișinău</a></li>
+        <li><i class="fas fa-phone-alt"></i>
+          <a href="tel:068322000">068 322 000</a></li>
+        <li><i class="fas fa-envelope"></i>
+          <a href="mailto:contact@victoria-textile.md">contact@victoria-textile.md</a></li>
+      </ul>
+      <div class="fsocl">
+        <a href="https://www.facebook.com/profile.php?id=61578864391873">
+          <i class="fab fa-facebook-f">
+          </i>
+        </a>
+        <a href="https://www.instagram.com/victoria_textile7/">
+          <i class="fab fa-instagram">
+          </i>
+        </a>
+        <a href="https://www.tiktok.com/@victoria.textile2">
+          <i class="fab fa-tiktok">
+          </i>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h6>Informații</h6>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="shop.html">Magazin</a></li>
+        <li><a href="cart.html">Coș de Cumpărături</a></li>
+        <li><a href="checkout.html">Comandă</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>Cont &amp; Plăți</h6>
+      <ul><li><a href="#">Comenzile Mele</a></li></ul>
+      <div style="margin-top:14px">
+        <div style="font-size:10px;letter-spacing:2px;color:var(--go);text-transform:uppercase;margin-bottom:6px">Plata Sigura</div>
+        <img src="img/payments.png" alt="Plata" style="max-width:140px;opacity:.75">
+      </div>
+    </div>
+  </div>
+
+  <div class="fbot">© 2026 Victoria Lenjerie de Pat · Toate drepturile rezervate</div>
+  <div style="background:#111;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06)">
+    <img src="img/tekwill-logo.png" alt="Tekwill în Fiecare Școală" style="height:36px;width:auto;opacity:.85">
+    <p style="color:rgba(255,255,255,.45);font-size:11px;line-height:1.6;max-width:680px;margin:0;text-align:center">
+      Acest website a fost realizat în cadrul competiției „Tekwill Junior Ambassadors" organizată de proiectul „Tekwill în Fiecare Școală" și nu reflectă neapărat opinia proiectului.
+    </p>
+  </div>
+</footer>
+
+<a href="#" class="btop" id="btop">
+  <i class="fas fa-chevron-up">
+  </i>
+</a>
+<div class="notif" id="notif">
+</div>
+
+<div class="covrl" id="covrl" onclick="toggleCart()">
+</div>
+<div class="csid" id="csid">
+  <div class="chdr">4
+    <h5>Coșul Tău</h5>
+    <button class="ccls" onclick="toggleCart()">
+      <i class="fas fa-times">
+      </i>
+    </button>
+  </div>
+  
+  <div class="cbdy">
+    <div class="cmt" id="cmt">
+      <i class="fas fa-shopping-bag">
+    </i><p>Coșul tău este gol.</p>
+  </div>
+    <div id="citems">
+    </div>
+  </div>
+  <div class="cftr" id="cftr" style="display:none">
+    <div class="ctot">
+      <span>Total:</span>
+      <span class="am" id="ctotal">0 lei</span>
+    </div>
+    <p style="font-size:11px;color:var(--mu);margin-bottom:10px">
+      <i class="fas fa-truck" style="margin-right:4px">
+      </i> Livrare gratuită peste 800 lei</p>
+    <button class="bck" onclick="openOrderCart()">Plasează Comanda</button>
+    <button class="bcs" onclick="toggleCart()">Continuă Cumpărăturile</button>
+  </div>
+</div>
+
+<div class="movrl" id="movrl" onclick="if(event.target===this)closeOrder()">
+  <div class="mbox">
+    <div class="mhdr">
+      <h5>Plasează Comanda</h5><button class="mcls" onclick="closeOrder()">
+        <i class="fas fa-times">
+        </i>
+      </button>
+    </div>
+    <div class="mbdy">
+      <div id="mform" style="display:none">
+      </div>
+      <div class="succbox" id="sbox">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
